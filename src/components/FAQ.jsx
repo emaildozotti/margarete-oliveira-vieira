@@ -36,7 +36,7 @@ const faqs = [
 ]
 
 const CTA_WHATSAPP =
-  'https://wa.me/5567991933247?text=Ol%C3%A1%20Margarete%2C%20vi%20seu%20site%20e%20quero%20dar%20o%20primeiro%20passo%20para%20retomar%20o%20governo%20da%20minha%20vida'
+  'https://wa.me/5567993272287?text=Ol%C3%A1%20Margarete%2C%20vi%20seu%20site%20e%20quero%20dar%20o%20primeiro%20passo%20para%20retomar%20o%20governo%20da%20minha%20vida'
 
 function FAQ() {
   const [openIndex, setOpenIndex] = useState(null)

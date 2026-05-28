@@ -34,11 +34,11 @@ function About() {
               Esses momentos me ensinaram que identidade construída sobre conquistas e títulos é frágil. E quando as conquistas vão, você vai junto. Aprendi a ancorar em outro lugar.
             </p>
             <p className="font-body text-neutral-200 leading-relaxed mb-8 text-base md:text-lg">
-              Hoje trabalho com adultos que chegam com vida estruturada e deserto interno. Que se sentem manipulados sem entender por quê. Que já tentaram mudar e voltaram ao mesmo padrão. Meu trabalho começa onde as outras abordagens param: na causa biográfica e espiritual.
+              Hoje trabalho com adultos que chegam com vida desestruturada e deserto interno. Que se sentem manipulados sem entender por quê. Que já tentaram mudar e voltaram ao mesmo padrão. Meu trabalho começa onde as outras abordagens param: na causa biográfica e espiritual.
             </p>
 
-            {/* Frase de impacto — destaque bg-primary/10 */}
-            <div className="bg-primary/20 border-l-4 border-accent rounded-r-xl px-6 py-5">
+            {/* Frase de impacto — bloco opaco em primary garante contraste sobre o gradient. */}
+            <div className="bg-primary border-l-4 border-accent rounded-r-xl px-6 py-5 shadow-card">
               <p className="font-display text-lg md:text-xl italic text-neutral-50 leading-relaxed">
                 "Terapeuta e mentora especializada em reconstrução de identidade e governança pessoal.{' '}
                 <span className="not-italic font-bold text-accent">

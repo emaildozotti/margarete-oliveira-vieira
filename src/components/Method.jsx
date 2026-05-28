@@ -43,10 +43,13 @@ function Method() {
           <p className="font-ui text-xs uppercase tracking-widest text-accent font-medium mb-3">
             O Método
           </p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-neutral-900 mb-2">
             Investigação Biográfica e{' '}
             <span className="text-primary">Governança Pessoal</span>
           </h2>
+          <p className="font-ui text-xs md:text-sm uppercase tracking-[0.2em] text-accent font-medium mb-5">
+            TRG · Terapia de Reprocessamento Generativo
+          </p>
           <p className="font-body text-neutral-700 text-lg max-w-xl mx-auto leading-relaxed">
             Criei esse processo porque percebo onde o problema realmente está: na infância, no sistema familiar, no binômio entre amor e limites. Não trabalho o sintoma. Trabalho a causa.
           </p>
