@@ -29,7 +29,7 @@ function Method() {
   return (
     <section
       id="metodo"
-      className="relative bg-neutral-50 px-6 py-20 md:px-16 lg:px-24 overflow-hidden"
+      className="relative bg-neutral-50 px-6 py-20 md:px-16 lg:px-24 overflow-hidden section-seam-top"
     >
       {/* Ornamento blur accent centralizado */}
       <div

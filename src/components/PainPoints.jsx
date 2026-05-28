@@ -14,7 +14,7 @@ function PainPoints() {
   return (
     <section
       id="dores"
-      className="bg-neutral-100 px-6 py-20 md:px-16 lg:px-24"
+      className="bg-neutral-100 px-6 py-20 md:px-16 lg:px-24 section-seam-top"
     >
       <div className="max-w-5xl mx-auto">
         {/* Título */}

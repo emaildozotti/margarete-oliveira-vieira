@@ -119,7 +119,7 @@ function TestimonialCard({ testimonial, delay }) {
           <p className="font-ui font-semibold text-neutral-900 text-sm">
             {testimonial.name}
           </p>
-          <p className="font-ui text-xs text-neutral-700/60">
+          <p className="font-ui text-xs text-neutral-700/80">
             {testimonial.age} &bull; {testimonial.location}
           </p>
         </div>
@@ -127,7 +127,7 @@ function TestimonialCard({ testimonial, delay }) {
 
       {/* Situação anterior */}
       <div className="mb-4 relative z-10">
-        <p className="font-ui text-xs uppercase tracking-wider text-neutral-700/50 mb-2">
+        <p className="font-ui text-xs uppercase tracking-[0.18em] text-neutral-700/75 font-medium mb-2">
           Antes
         </p>
         <p className="font-body text-sm text-neutral-700 italic leading-relaxed">
@@ -140,7 +140,7 @@ function TestimonialCard({ testimonial, delay }) {
 
       {/* Resultado */}
       <div className="relative z-10">
-        <p className="font-ui text-xs uppercase tracking-wider text-primary/60 mb-2">
+        <p className="font-ui text-xs uppercase tracking-[0.18em] text-primary font-semibold mb-2">
           Depois
         </p>
         <p className="font-body text-sm text-neutral-900 font-semibold leading-relaxed">

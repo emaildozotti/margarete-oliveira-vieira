@@ -1,38 +1,24 @@
-const WA_LINK = 'https://wa.me/5567993272287?text=Ol%C3%A1%2C%20Margarete!%20Vim%20pelo%20seu%20site%20e%20quero%20minha%20primeira%20conversa.'
+// DECISÃO CRIATIVA: Hero noturno em base secondary-deep (azul abissal) com auroras
+// dourado/vinho — herda a paleta canônica do site. Sticky header desktop com
+// backdrop-blur cria continuidade ao rolar. Foto à direita no desktop com frame
+// rotacionado de baixa opacidade vinho — ancora visualmente sem competir com o texto.
 
-const css = `
-@keyframes aurora-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(4%, 5%) scale(1.06); }
-  66% { transform: translate(-3%, 2%) scale(0.96); }
-}
-@keyframes aurora-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-5%, -4%) scale(1.09); }
-  66% { transform: translate(4%, -2%) scale(0.94); }
-}
-@keyframes aurora-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(3%, -5%) scale(1.07); }
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-`
+const WA_LINK = 'https://wa.me/5567993272287?text=Ol%C3%A1%2C%20Margarete!%20Vim%20pelo%20seu%20site%20e%20quero%20minha%20primeira%20conversa.'
 
 function Hero() {
   return (
     <>
-      <style>{css}</style>
-
-      {/* Desktop sticky header */}
-      <header className="mv-header" style={{ display: 'none' }}>
-        <style>{`@media(min-width:768px){.mv-header{display:flex!important;position:fixed;top:0;left:0;right:0;z-index:50;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(8,8,16,0.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(var(--color-primary-rgb,100,80,200),0.12)}}`}</style>
-        <span style={{ fontFamily: 'var(--font-display, serif)', color: 'var(--color-accent, #8B7CE8)', fontSize: '1.1rem', fontStyle: 'italic' }}>
+      {/* Sticky header — desktop only */}
+      <header className="hidden md:flex fixed top-0 inset-x-0 z-50 items-center justify-between px-10 py-4 bg-secondary-deep/85 backdrop-blur-md border-b border-accent/15">
+        <span className="font-display italic text-base text-accent-soft">
           Margarete Vieira
         </span>
-        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#5C1A2E",color:"#FAF7F2",fontFamily:"Inter,system-ui,sans-serif",fontWeight:600,fontSize:"14px",letterSpacing:"0.08em",textTransform:"uppercase",padding:"16px 36px",borderRadius:"9999px",textDecoration:"none",cursor:"pointer",boxShadow:"0 12px 32px rgba(92,26,46,0.25)",transition:"all 0.3s ease"}} style={{ fontSize: '0.8rem' }}>
+        <a
+          href={WA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-ui font-semibold text-xs uppercase tracking-[0.08em] text-cream bg-primary px-7 py-3 rounded-full hover:bg-primary-deep transition-colors duration-300 shadow-cta"
+        >
           Primeira conversa
         </a>
       </header>
@@ -40,72 +26,127 @@ function Hero() {
       <section
         id="hero"
         aria-label="Hero Margarete Oliveira Vieira"
-        style={{
-          position: 'relative',
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          overflow: 'hidden',
-          background: 'linear-gradient(135deg, #080810 0%, #0D0D1E 50%, #060610 100%)',
-        }}
+        className="relative min-h-screen flex items-center overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #0E1827 0%, #1A2940 50%, #0A1220 100%)' }}
       >
-        {/* Aurora blobs */}
-        <div aria-hidden="true" style={{ position: 'absolute', top: '-15%', left: '-10%', width: '55vw', height: '55vw', maxWidth: '600px', maxHeight: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(100,80,200,0.25) 0%, transparent 70%)', filter: 'blur(80px)', pointerEvents: 'none', animation: 'aurora-1 16s ease-in-out infinite', opacity: 0.35 }} />
-        <div aria-hidden="true" style={{ position: 'absolute', bottom: '-10%', right: '-8%', width: '45vw', height: '45vw', maxWidth: '500px', maxHeight: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(139,124,232,0.20) 0%, transparent 70%)', filter: 'blur(90px)', pointerEvents: 'none', animation: 'aurora-2 20s ease-in-out infinite', opacity: 0.3 }} />
-        <div aria-hidden="true" style={{ position: 'absolute', top: '45%', right: '20%', width: '35vw', height: '35vw', maxWidth: '400px', maxHeight: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(80,60,180,0.18) 0%, transparent 70%)', filter: 'blur(70px)', pointerEvents: 'none', animation: 'aurora-3 14s ease-in-out infinite', opacity: 0.25 }} />
-
-        {/* Content */}
+        {/* Aurora blobs — paleta vinho/dourado */}
         <div
-          className="mv-grid"
-          style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '72rem', margin: '0 auto', padding: '6rem 1.5rem 4rem', display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', alignItems: 'center' }}
-        >
-          <style>{`@media(min-width:768px){.mv-grid{grid-template-columns:1fr 1fr!important;padding-top:5rem!important}.mv-photo{order:2}.mv-text{order:1}}`}</style>
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-[15%] -left-[10%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(92,26,46,0.45) 0%, transparent 70%)',
+            filter: 'blur(80px)',
+            animation: 'aurora-1 16s ease-in-out infinite',
+            opacity: 0.7,
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-[10%] -right-[8%] w-[45vw] h-[45vw] max-w-[500px] max-h-[500px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(181,133,74,0.30) 0%, transparent 70%)',
+            filter: 'blur(90px)',
+            animation: 'aurora-2 20s ease-in-out infinite',
+            opacity: 0.55,
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute top-[45%] right-[20%] w-[35vw] h-[35vw] max-w-[400px] max-h-[400px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(212,168,106,0.20) 0%, transparent 70%)',
+            filter: 'blur(70px)',
+            animation: 'aurora-3 14s ease-in-out infinite',
+            opacity: 0.45,
+          }}
+        />
 
+        {/* Content grid */}
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-24 pb-16 md:pt-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Text column */}
-          <div className="mv-text" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div className="flex flex-col gap-6 md:order-1 order-2">
             {/* Callout */}
             <p
-              style={{ fontFamily: 'var(--font-ui, sans-serif)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--color-accent, #8B7CE8)', margin: 0, opacity: 0, animation: 'fadeUp 0.8s ease forwards', animationDelay: '0s' }}
+              className="font-ui text-[10px] tracking-[0.2em] uppercase text-accent-soft opacity-0"
+              style={{ animation: 'fadeUp 0.8s ease forwards' }}
             >
               RECONSTRUÇÃO DE IDENTIDADE
             </p>
 
-            {/* H1 — excellent copy, preserved */}
+            {/* H1 */}
             <h1
-              style={{ fontFamily: 'var(--font-display, serif)', fontSize: 'clamp(2.2rem, 5vw, 4rem)', lineHeight: 1.1, color: '#F5F3FF', margin: 0, opacity: 0, animation: 'fadeUp 0.8s ease forwards', animationDelay: '0.15s' }}
+              className="font-display text-cream leading-[1.1] opacity-0"
+              style={{
+                fontSize: 'clamp(2.2rem, 5vw, 4rem)',
+                animation: 'fadeUp 0.8s ease forwards',
+                animationDelay: '0.15s',
+              }}
             >
               Nasceu livre.{' '}
-              <span style={{ color: 'var(--color-accent, #8B7CE8)', display: 'block', marginTop: '0.2rem' }}>
+              <span className="block mt-1 text-accent-soft">
                 Está vivendo o roteiro dos outros.
               </span>
             </h1>
 
             {/* Sub-headline */}
             <p
-              style={{ fontFamily: 'var(--font-body, sans-serif)', fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', lineHeight: 1.65, color: 'rgba(245,243,255,0.70)', maxWidth: '30rem', margin: 0, opacity: 0, animation: 'fadeUp 0.8s ease forwards', animationDelay: '0.30s' }}
+              className="font-body text-cream/75 leading-relaxed max-w-[30rem] opacity-0"
+              style={{
+                fontSize: 'clamp(1rem, 1.6vw, 1.15rem)',
+                animation: 'fadeUp 0.8s ease forwards',
+                animationDelay: '0.30s',
+              }}
             >
               Terapia que encontra a causa raiz e devolve o governo da sua vida.
             </p>
 
             {/* CTA */}
-            <div style={{ opacity: 0, animation: 'fadeUp 0.8s ease forwards', animationDelay: '0.45s' }}>
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#5C1A2E",color:"#FAF7F2",fontFamily:"Inter,system-ui,sans-serif",fontWeight:600,fontSize:"14px",letterSpacing:"0.08em",textTransform:"uppercase",padding:"16px 36px",borderRadius:"9999px",textDecoration:"none",cursor:"pointer",boxShadow:"0 12px 32px rgba(92,26,46,0.25)",transition:"all 0.3s ease"}}>
+            <div
+              className="opacity-0"
+              style={{ animation: 'fadeUp 0.8s ease forwards', animationDelay: '0.45s' }}
+            >
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 font-ui font-semibold text-sm uppercase tracking-[0.08em] text-cream bg-primary px-9 py-4 rounded-full shadow-cta hover:bg-primary-deep hover:-translate-y-0.5 transition-all duration-300"
+              >
                 Quero minha primeira conversa
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
               </a>
             </div>
           </div>
 
-          {/* Photo — Treatment A: rotated frame */}
-          <div className="mv-photo" style={{ display: 'flex', justifyContent: 'center', opacity: 0, animation: 'fadeUp 1s ease forwards', animationDelay: '0.2s' }}>
-            <div style={{ position: 'relative', width: '100%', maxWidth: '380px' }}>
-              {/* Rotated back frame */}
-              <div aria-hidden="true" style={{ position: 'absolute', inset: 0, transform: 'rotate(-2.5deg)', background: 'rgba(100,80,200,0.10)', border: '1px solid rgba(139,124,232,0.3)', borderRadius: '4px', translate: '10px 10px' }} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #080810 0%, transparent 45%)', zIndex: 1, pointerEvents: 'none', borderRadius: '4px' }} aria-hidden="true" />
+          {/* Photo column */}
+          <div
+            className="flex justify-center md:order-2 order-1 opacity-0"
+            style={{ animation: 'fadeUp 1s ease forwards', animationDelay: '0.2s' }}
+          >
+            <div className="relative w-full max-w-[380px]">
+              {/* Back frame rotacionado — dourado sutil */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 rounded-sm border border-accent/30"
+                style={{
+                  transform: 'rotate(-2.5deg) translate(10px, 10px)',
+                  background: 'rgba(181,133,74,0.06)',
+                }}
+              />
+              {/* Overlay degradê base pra acentuar a foto no escuro */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none rounded-sm z-10"
+                style={{
+                  background: 'linear-gradient(to top, rgba(14,24,39,0.7) 0%, transparent 45%)',
+                }}
+              />
               <img
                 src="/images/hero.jpg"
                 alt="Margarete Oliveira Vieira — Reconstrução de Identidade"
-                style={{ position: 'relative', width: '100%', aspectRatio: '3/4', objectFit: 'cover', objectPosition: 'top', borderRadius: '4px', display: 'block', boxShadow: '0 25px 60px rgba(0,0,0,0.7)' }}
                 loading="eager"
+                className="relative w-full aspect-[3/4] object-cover object-top rounded-sm block shadow-photo"
               />
             </div>
           </div>

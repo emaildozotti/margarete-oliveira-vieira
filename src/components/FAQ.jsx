@@ -127,7 +127,7 @@ function FAQ() {
       {/* CTA Final — fundo primary */}
       <section
         id="cta-final"
-        className="relative bg-primary px-6 py-24 md:px-16 lg:px-24 overflow-hidden"
+        className="relative bg-primary px-6 py-24 md:px-16 lg:px-24 overflow-hidden section-seam-top"
       >
         {/* Ornamentos blur no CTA */}
         <div

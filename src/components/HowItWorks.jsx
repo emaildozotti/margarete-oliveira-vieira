@@ -31,7 +31,7 @@ function HowItWorks() {
   return (
     <section
       id="como-funciona"
-      className="bg-neutral-100 px-6 py-20 md:px-16 lg:px-24"
+      className="bg-neutral-100 px-6 py-20 md:px-16 lg:px-24 section-seam-top"
     >
       <div className="max-w-3xl mx-auto">
         {/* Título */}

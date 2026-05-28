@@ -3,6 +3,37 @@
 @tailwind utilities;
 
 /* ============================================
+   DESIGN TOKENS — fonte única
+   Toda decisão de cor/tipografia parte daqui.
+   Qualquer componente que precise expressar a
+   identidade da marca usa essas variáveis.
+   ============================================ */
+:root {
+  /* Paleta — Margarete Oliveira Vieira */
+  --color-primary: #5C1A2E;        /* vinho profundo — autoridade, identidade */
+  --color-primary-deep: #3F0F1F;   /* vinho noite — hover/depth */
+  --color-secondary: #1A2940;      /* azul-noite — contemplação */
+  --color-secondary-deep: #0E1827; /* azul abissal — gradients */
+  --color-accent: #B5854A;         /* dourado cobre — guia/suporte */
+  --color-accent-soft: #D4A86A;    /* dourado luminoso — destaque sutil */
+  --color-cream: #FAF7F2;          /* off-white — base clara */
+  --color-cream-warm: #F0EBE1;     /* cream quente — camadas */
+  --color-ink: #1A1515;            /* near-black — texto sobre claro */
+  --color-ink-soft: #3D3535;       /* near-black suave — corpo */
+
+  /* Tipografia */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
+
+  /* Sombras coerentes — todas baseadas em primary */
+  --shadow-card: 0 8px 40px rgba(92, 26, 46, 0.08);
+  --shadow-card-hover: 0 12px 48px rgba(92, 26, 46, 0.16);
+  --shadow-cta: 0 12px 32px rgba(92, 26, 46, 0.25);
+  --shadow-photo: 0 25px 60px rgba(14, 24, 39, 0.55);
+}
+
+/* ============================================
    GLOBAL RESET & BASE
    ============================================ */
 html {
@@ -10,41 +41,40 @@ html {
 }
 
 body {
-  font-family: 'Lora', Georgia, serif;
-  color: #3D3535;
-  background-color: #FAF7F2;
+  font-family: var(--font-body);
+  color: var(--color-ink-soft);
+  background-color: var(--color-cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ============================================
-   SCROLLBAR CUSTOMIZADA — 6px, cor primary
+   SCROLLBAR CUSTOMIZADA
    ============================================ */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F0EBE1;
+  background: var(--color-cream-warm);
 }
 ::-webkit-scrollbar-thumb {
-  background: #5C1A2E;
+  background: var(--color-primary);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7A2340;
+  background: var(--color-primary-deep);
 }
 
-/* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #5C1A2E #F0EBE1;
+  scrollbar-color: var(--color-primary) var(--color-cream-warm);
 }
 
 /* ============================================
    TIPOGRAFIA BASE
    ============================================ */
 h1, h2, h3, h4 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
 }
 
 /* ============================================
@@ -55,11 +85,11 @@ h1, h2, h3, h4 {
   height: auto;
   border-radius: 1rem;
   object-fit: cover;
-  box-shadow: 0 8px 40px rgba(92, 26, 46, 0.12);
+  box-shadow: var(--shadow-photo);
 }
 
 /* ============================================
-   VIDEO PLACEHOLDER — Proporção 9:16 vertical
+   VIDEO PLACEHOLDER — 9:16 vertical
    ============================================ */
 #video-placeholder {
   position: relative;
@@ -67,7 +97,7 @@ h1, h2, h3, h4 {
   max-width: 360px;
   margin: 0 auto;
   aspect-ratio: 9 / 16;
-  background: linear-gradient(135deg, #1A2940 0%, #0d1a2e 100%);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-deep) 100%);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -124,4 +154,35 @@ h1, h2, h3, h4 {
 }
 .testimonial-card-snap {
   scroll-snap-align: center;
+}
+
+/* ============================================
+   COSTURA ENTRE SEÇÕES — linha dourada hairline
+   Aplicar em <section> que faz transição
+   escuro↔claro pra costurar o ritmo visual.
+   ============================================ */
+.section-seam-top {
+  border-top: 1px solid rgba(181, 133, 74, 0.15);
+}
+
+/* ============================================
+   HERO — auroras animadas (paleta vinho/dourado)
+   ============================================ */
+@keyframes aurora-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(4%, 5%) scale(1.06); }
+  66%      { transform: translate(-3%, 2%) scale(0.96); }
+}
+@keyframes aurora-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(-5%, -4%) scale(1.09); }
+  66%      { transform: translate(4%, -2%) scale(0.94); }
+}
+@keyframes aurora-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(3%, -5%) scale(1.07); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

@@ -8,7 +8,7 @@ function VideoSection() {
   return (
     <section
       id="vsl"
-      className="bg-secondary px-6 py-20 md:px-16 lg:px-24 relative overflow-hidden"
+      className="bg-secondary px-6 py-20 md:px-16 lg:px-24 relative overflow-hidden section-seam-top"
     >
       {/* Ornamento blur */}
       <div

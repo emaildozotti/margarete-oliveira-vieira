@@ -8,10 +8,10 @@ const CTA_WHATSAPP =
 
 function Footer() {
   return (
-    <footer className="bg-secondary px-6 py-16 md:px-16 lg:px-24">
+    <footer className="bg-secondary-deep px-6 py-16 md:px-16 lg:px-24">
       <div className="max-w-4xl mx-auto">
         {/* Separador */}
-        <div className="w-full h-px bg-accent opacity-20 mb-12" />
+        <div className="w-full h-px bg-accent opacity-30 mb-12" />
 
         {/* Conteúdo central */}
         <div className="text-center mb-10">
@@ -21,12 +21,12 @@ function Footer() {
           </h3>
 
           {/* Slogan */}
-          <p className="font-ui text-xs uppercase tracking-widest text-accent/70 font-medium mb-8">
+          <p className="font-ui text-xs uppercase tracking-[0.2em] text-accent-soft font-medium mb-8">
             Análise Biográfica &amp; Governança Pessoal
           </p>
 
           {/* Frase-síntese em Playfair Italic */}
-          <p className="font-display text-lg italic text-neutral-200 opacity-70 max-w-2xl mx-auto leading-relaxed mb-10">
+          <p className="font-display text-lg italic text-cream/80 max-w-2xl mx-auto leading-relaxed mb-10">
             "Você nasceu com um design original. Está na hora de retomar o que sempre foi seu."
           </p>
 
@@ -35,7 +35,7 @@ function Footer() {
             href={CTA_WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-ui text-sm font-medium text-accent hover:text-neutral-50 transition-colors duration-300"
+            className="inline-flex items-center gap-2 font-ui text-sm font-medium text-accent-soft hover:text-cream transition-colors duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -56,17 +56,17 @@ function Footer() {
         </div>
 
         {/* Separador */}
-        <div className="w-full h-px bg-accent opacity-10 mb-8" />
+        <div className="w-full h-px bg-accent opacity-20 mb-8" />
 
         {/* Créditos */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="font-ui text-xs text-neutral-50/30">
+          <p className="font-ui text-xs text-cream/60">
             &copy; {new Date().getFullYear()} Margarete Oliveira Vieira. Todos
             os direitos reservados.
           </p>
-          <p className="font-ui text-xs text-neutral-50/20">
+          <p className="font-ui text-xs text-cream/50">
             Desenvolvido por{' '}
-            <span className="text-neutral-50/30">Zotti Performance Marketing</span>
+            <span className="text-cream/70">Zotti Performance Marketing</span>
           </p>
         </div>
       </div>
