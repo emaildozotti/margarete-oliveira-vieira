@@ -31,7 +31,7 @@ function About() {
         {/* Título */}
         <div className="text-center mb-16" data-aos="fade-up">
           <p className="font-ui text-xs uppercase tracking-[0.2em] text-accent-soft font-medium mb-3">
-            Quem é
+            Quem é Margarete Oliveira
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-cream leading-tight">
             Forjada nos desafios. Ancorada em quem ela sempre foi.
