@@ -69,8 +69,8 @@ function About() {
               <p className="font-ui text-xs uppercase tracking-widest text-accent/70 mb-2">
                 Formação &amp; Especializações
               </p>
-              <p className="font-ui text-xs text-neutral-300 italic">
-                [Inserir formação e credenciais de Margarete]
+              <p className="font-ui text-sm text-neutral-50">
+                TRG, terapia de Reprocessamento Generativo.
               </p>
             </div>
           </div>
