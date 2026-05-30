@@ -3,10 +3,10 @@
 // sem recorrer a ícones de aspas genéricos.
 // No mobile, os cards são dispostos em scroll snap horizontal — evita truncamento
 // de depoimentos e mantém cada história completa e legível.
-// Separação visual clara entre "situação anterior" (italic, menor) e "resultado" (bold)
-// reforça a estrutura Chaperon sem precisar de labels explícitos.
 // Depoimentos em vídeo (Shorts 9:16) abrem a seção: peso máximo de prova social
 // vem do rosto/voz real; cards de texto fecham com variedade de histórias.
+// Texto dos cards em fala natural, sem estrutura "antes/depois" — soa como
+// alguém realmente falando, não como copy de página.
 
 const videoTestimonials = [
   { id: 'TOIzdLWU-mQ', title: 'Depoimento de paciente — Margarete Oliveira' },
@@ -18,28 +18,22 @@ const testimonials = [
     name: 'Luciana T.',
     age: 'gestora',
     location: 'Brasília',
-    situation:
-      'Passei anos tentando mudar comportamentos e voltando para o mesmo lugar.',
-    result:
-      'Com Margarete entendi que a raiz estava na minha infância. Em 6 meses, mudei padrões que carregava há 30 anos.',
+    quote:
+      'Eu fazia terapia há anos e ficava andando em círculos. Mudava uma coisa, voltava pra outra parecida. Com a Margarete comecei a entender de onde vinha — não só o que estava acontecendo agora. Foi isso que destravou.',
   },
   {
     name: 'Claudia B.',
     age: 'professora universitária',
     location: 'Curitiba',
-    situation:
-      'Não sabia que era possível ter fé e fazer terapia profunda ao mesmo tempo.',
-    result:
-      'Ela integra os dois de um jeito que nunca senti como imposição. Me sinto inteira pela primeira vez.',
+    quote:
+      'Eu achava que precisava escolher entre minha fé e fazer um trabalho mais profundo. Com ela não precisei. É a primeira vez que me sinto inteira.',
   },
   {
     name: 'Renata O.',
     age: 'advogada',
     location: 'São Paulo',
-    situation:
-      'Cheguei sentindo que vivia a vida que esperavam de mim.',
-    result:
-      'Hoje sei quem sou antes de qualquer papel que desempenho. Isso mudou meus relacionamentos, meu trabalho e a minha paz.',
+    quote:
+      'Cheguei pra resolver um assunto bem pontual. Saí entendendo que vivia uma vida que não era inteiramente minha. Hoje sei onde eu termino e onde começa o que esperavam de mim.',
   },
 ]
 
@@ -167,26 +161,10 @@ function TestimonialCard({ testimonial, delay }) {
         </div>
       </div>
 
-      {/* Situação anterior */}
-      <div className="mb-4 relative z-10">
-        <p className="font-ui text-xs uppercase tracking-[0.18em] text-neutral-700/75 font-medium mb-2">
-          Antes
-        </p>
-        <p className="font-body text-sm text-neutral-700 italic leading-relaxed">
-          "{testimonial.situation}"
-        </p>
-      </div>
-
-      {/* Separador */}
-      <div className="w-full h-px bg-accent opacity-20 my-4" />
-
-      {/* Resultado */}
+      {/* Fala */}
       <div className="relative z-10">
-        <p className="font-ui text-xs uppercase tracking-[0.18em] text-primary font-semibold mb-2">
-          Depois
-        </p>
-        <p className="font-body text-sm text-neutral-900 font-semibold leading-relaxed">
-          "{testimonial.result}"
+        <p className="font-body text-[15px] text-neutral-800 leading-relaxed">
+          {testimonial.quote}
         </p>
       </div>
     </div>
