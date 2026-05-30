@@ -92,15 +92,10 @@ function Testimonials() {
           className="w-24 h-px bg-accent opacity-30 mx-auto mb-16"
         />
 
-        {/* Mobile: scroll snap horizontal */}
-        <div className="flex md:hidden gap-5 overflow-x-auto testimonials-track pb-4 -mx-6 px-6">
+        {/* Mobile: empilhado vertical */}
+        <div className="flex md:hidden flex-col gap-5">
           {testimonials.map((t, index) => (
-            <div
-              key={index}
-              className="testimonial-card-snap flex-shrink-0 w-[85vw] max-w-sm"
-            >
-              <TestimonialCard testimonial={t} delay={0} />
-            </div>
+            <TestimonialCard key={index} testimonial={t} delay={index * 100} />
           ))}
         </div>
 
